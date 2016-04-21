@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Conversion</title>
+    
+    <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css">
+    <script src="scripts/jquery-1.8.3.min.js"></script>
+    <script src="scripts/jquery.mobile-1.3.1.min.js"></script>
+    
+    
+    <script src="scripts/temp1.js"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onload="setup()">
+
+    <input type="number" id="temp">
+    <label for="temp" id="degree">&deg;C</label>
+    
+    <fieldset data-role="controlgroup">
+        <legend>Convert To</legend>
+        <input type="radio" id="celcius" name="units" value="celcius">
+        <label for="celcius">Celcius</label>
+        
+        <input type="radio" id="faren" name="units" value="faren" checked="checked">
+        <label for="faren">Faren</label>
+    </fieldset>    
+    <button onclick="convert()">Convert</button>
+    
+    <table>
+        <tr>
+            <th>Conversions</th>
+        </tr>
+        <tr>
+            <td id="conversion1"></td>
+        </tr>
+    </table>
+</body>
+</html>

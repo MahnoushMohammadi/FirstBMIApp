@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang=en manifest="manifest.appcache">
+
+<head>
+  <title>BMI </title>
+
+  <!--Adjusting the page on mobile screen  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+
+   CSS 
+  <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css"
+  />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <script src="scripts/jquery-1.9.1.min.js"></script>
+  <script src="scripts/jquery.mobile-1.3.1.min.js"></script>
+</head> 
+
+<body>
+  <!-- Start of first page -->
+  <div data-role="page" id="pageHome">
+    <div data-role="header">
+      <h1>BMI </h1>
+    </div><br>
+
+<fieldset>
+    <legend><b>Please enter your height and weight below:<b></legend>
+    <div data-role="content">
+      Weight (kg) :<br>
+      <input type="number" name="weight" id="w" >
+      Height (m) :<br>
+      <input type="number" name="height" id="h" ><br>
+     
+    <div data-role="controlgroup" id="numKeyPad"> 
+        <button onclick="bmi()">Calculate BMI</button>
+      </div> <br><br>
+      <table>
+        <tr>
+            <th>Your BMI is: </th>
+          </tr>
+        </table>
+      <p id="demo"></p>
+      <p id="demo2"></p>
+      <script>
+      function bmi(){
+        var W = document.getElementById("w").value;
+        var H = document.getElementById("h").value;
+        var B = +W / (+H * +H);
+        B = B.toFixed(2);
+
+        if (B > 18.5 && B < 24.99){ 
+          document.getElementById("demo").innerHTML= B ;
+          document.getElementById("demo2").innerHTML="  Your BMI shows that you are Normal" ; 
+
+         } else if (B > 25 && B < 30) {
+
+          document.getElementById("demo").innerHTML= B ;
+          document.getElementById("demo2").innerHTML="  Your BMI shows that you are overweight" ;
+
+        }else if (B > 30 && B < 39.99) {
+
+          document.getElementById("demo").innerHTML= B ;
+          document.getElementById("demo2").innerHTML="  Your BMI shows that you are obese" ;
+        
+
+        }else if (B > 40) {
+
+          document.getElementById("demo").innerHTML= B ;
+          document.getElementById("demo2").innerHTML="  Your BMI shows that you are morbidly obese" ;
+        }
+
+        else {
+          document.getElementById("demo").innerHTML= B ;
+          document.getElementById("demo2").innerHTML="  Your BMI shows that you are underweight" ;
+        }
+      }
+
+        
+
+         </script>
+         <style>
+         th, td {
+          padding: 7px;
+          }
+         th {
+          text-align: center;
+          }
+         table#t01 tr:nth-child(even) {
+          background-color: #f1f1c1;
+           }
+           table#t01 tr:nth-child(odd) {
+            background-color: #fff;
+             }
+
+         table#t01 th {
+           background-color: black;
+            color: white;
+            }
+            </style>
+            
+
+         <table border="2" id="t01">
+
+        <tr>
+            <th colspan="2">Body Mass Index (BMI) </th>
+          </tr>
+          <tr>
+          <td>BMI &lt 18.5</td>
+          <td>Underweight</td>
+          </tr>
+          <tr>
+          <td>18.5 &lt BMI &lt 25</td>
+          <td>Normal</td>
+          </tr>
+          <tr>
+          <td>25 &lt BMI &lt 30</td>
+          <td>Overweight</td>
+          </tr>
+          <tr>
+          <td>30 &lt BMI &lt 40</td>
+          <td>Obese</td>
+          </tr>
+          <tr>
+          <td> BMI &gt 40</td>
+          <td>Morbidly Obese</td>
+          </tr>
+
+          </tr>
+        </table>
+
+
+
+      
+</body>
+
+</html>
